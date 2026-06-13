@@ -1,9 +1,12 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="sl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Predmeti / Courses</title>
+
+<!-- Font Awesome -->
+https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css
 
 <style>
 body {
@@ -38,25 +41,29 @@ body {
     padding: 35px 20px 50px 20px;
 }
 
-/* BACK LINK */
+/* HOME IKONA */
 .back-link {
-    display: inline-block;
-    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 25px;
     text-decoration: none;
     color: #222;
     background: #f0f0f0;
-    padding: 10px 16px;
     border-radius: 8px;
     border: 1px solid #d0d0d0;
-    transition: background 0.15s ease, border-color 0.15s ease;
+    font-size: 20px;
+    transition: background 0.15s ease, transform 0.15s ease;
 }
 
 .back-link:hover {
     background: #e5e5e5;
-    border-color: #bdbdbd;
+    transform: translateY(-1px);
 }
 
-/* SUBJECT BUTTONS */
+/* SUBJECT GRID */
 .subject-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -64,8 +71,12 @@ body {
     margin-top: 10px;
 }
 
+/* SUBJECT CARD */
 .subject-card {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 80px;
     padding: 24px 18px;
     background: white;
     border-radius: 12px;
@@ -85,6 +96,32 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    .content {
+        padding: 25px 15px 40px 15px;
+    }
+
+    .subject-card {
+        min-height: 70px;
+        font-size: 18px;
+    }
+
+    .back-link {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+}
 </style>
 </head>
 
@@ -96,7 +133,11 @@ body {
 </div>
 
 <div class="content">
-    <a class="back-link" href="index.html">← 🏠</a>
+
+    <!-- HOME IKONA -->
+    <a class="back-link" href="index.html">
+        <i class="fa-solid fa-house"></i>
+    </a>
 
     <div class="subject-grid">
         <a class="subject-card" href="mtrd.html">MTRD</a>
@@ -104,6 +145,7 @@ body {
         <a class="subject-card" href="mva.html">MVA</a>
         <a class="subject-card" href="ada.html">ADA</a>
     </div>
+
 </div>
 
 </body>

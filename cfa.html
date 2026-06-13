@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>CFA</title>
 
+<!-- Font Awesome za home ikono -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -13,35 +16,48 @@ body {
     color: #222;
 }
 
-/* CONTENT */
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
 .content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
-    line-height: 1.6;
+    padding: 35px 20px 50px 20px;
 }
 
-/* BACK LINK */
+/* HOME LINK */
 .back-link {
-    display: inline-block;
-    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 25px;
     text-decoration: none;
     color: #222;
     background: #f0f0f0;
-    padding: 10px 16px;
     border-radius: 8px;
     border: 1px solid #d0d0d0;
+    transition: background 0.15s ease, border-color 0.15s ease, transform 0.15s ease;
+    font-size: 22px;
 }
 
 .back-link:hover {
     background: #e5e5e5;
+    border-color: #bdbdbd;
+    transform: translateY(-1px);
 }
 
 /* TEXT */
-h1 {
-    margin-top: 0;
-}
-
 p {
     margin-bottom: 20px;
     line-height: 1.7;
@@ -54,16 +70,37 @@ p {
         text-align: justify;
     }
 }
+
+@media (max-width: 700px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .content {
+        padding: 25px 15px 40px 15px;
+    }
+
+    .back-link {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<div class="header">
+    <h1>CFA</h1>
+</div>
+
 <div class="content">
 
-    <a class="back-link" href="index.html">← 🏠</a>
-
-    <h1>CFA (Chartered Financial Analyst)</h1>
+    <a class="back-link" href="index.html" aria-label="Domov">
+        <i class="fa-solid fa-house"></i>
+    </a>
 
     <p>
     CFA (Chartered Financial Analyst) je mednarodna licenca s področja financ, ki se jo pridobi z uspešnim opravljanjem treh izpitov in ustreznimi delovnimi izkušnjami. Danes ima licenco več kot 190,000 oseb, ki delujejo na več kot 160 svetovnih trgih. Ker se vse več študentov zanima za pridobitev licence, na kratko opisujem svojo izkušnjo.

@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Program R</title>
 
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
 <style>
 body {
     font-family: Arial, sans-serif;
@@ -13,24 +17,40 @@ body {
     color: #222;
 }
 
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
 /* CONTENT */
 .content {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 35px 20px 50px 20px;
     line-height: 1.6;
 }
 
-/* BACK LINK */
+/* HOME BUTTON */
 .back-link {
-    display: inline-block;
-    margin-bottom: 30px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    margin-bottom: 25px;
     text-decoration: none;
     color: #222;
     background: #f0f0f0;
-    padding: 10px 16px;
     border-radius: 8px;
     border: 1px solid #d0d0d0;
+    font-size: 20px;
 }
 
 .back-link:hover {
@@ -38,16 +58,21 @@ body {
 }
 
 /* TEXT */
-h1 {
-    margin-top: 0;
-}
-
 h2 {
     margin-top: 40px;
 }
 
 p {
     margin-bottom: 20px;
+    line-height: 1.7;
+    text-align: left;
+}
+
+/* JUSTIFY samo na računalniku */
+@media (min-width: 700px) {
+    p {
+        text-align: justify;
+    }
 }
 
 hr {
@@ -64,99 +89,101 @@ a {
 a:hover {
     text-decoration: underline;
 }
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .header h1 {
+        font-size: 28px;
+    }
+
+    .content {
+        padding: 25px 15px 40px 15px;
+    }
+}
 </style>
 </head>
 
 <body>
 
+<div class="header">
+    <h1>Program R</h1>
+</div>
+
 <div class="content">
 
-    <a class="back-link" href="index.html">← 🏠</a>
-
-    <h1>Program R</h1>
+    <a class="back-link" href="index.html">
+        <i class="fa-solid fa-house"></i>
+    </a>
 
     <h2>NAMESTITEV PROGRAMA R (INSTALLING PROGRAM R)</h2>
 
     <p>
-    Če želite R Studio uporabljati na svojem računalniku, potem si namestite naslednja dva programa.
-    <br>
+    Če želite R Studio uporabljati na svojem računalniku, potem si namestite naslednja dva programa.<br>
     If you want to use R Studio on your computer, install the following two programs.
     </p>
 
     <p>
     <strong>Program R (software package for statistical data processing):</strong><br>
-    <a href="https://cran.r-project.org/" target="_blank">
-        POVEZAVA/LINK
-    </a>
+    <a href="https://cran.r-project.org/" target="_blank">POVEZAVA / LINK</a>
     </p>
-
 
     <p>
     <strong>R Studio (interface for using the R program):</strong><br>
-    <a href="https://posit.co/download/rstudio-desktop/" target="_blank">
-    POVEZAVA/LINK
-    </a>
+    <a href="https://posit.co/download/rstudio-desktop/" target="_blank">POVEZAVA / LINK</a>
     </p>
-
 
     <p>
     <strong>Video, kako prvič namestiti program R (how to install for the first time):</strong><br>
     <a href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank">
-    POVEZAVA/LINK
+    POVEZAVA / LINK
     </a>
+    </p>
 
     <hr>
 
     <h2>POVZETKI FUNKCIJ IN UKAZOV R / SUMMARY OF FUNCTIONS AND COMMANDS R</h2>
 
-<p>
+    <p>
         <a href="podatki/r_funkcije_si_v2.0.pdf" target="_blank">
             R funkcije za Ekonomiste, V2.0
-        </a>
-    <br>
+        </a><br>
         <a href="podatki/r_funkcije_eng_v2.0.pdf" target="_blank">
             R functions for Economists, V2.0
         </a>
-</p>
-    
-<p>
+    </p>
+
+    <p>
         <a href="https://rstudio.github.io/cheatsheets/rstudio-ide.pdf" target="_blank">
             RStudio - cheatsheet
-        </a>
-    <br>
+        </a><br>
         <a href="https://rstudio.github.io/cheatsheets/rmarkdown.pdf" target="_blank">
             R Markdown - cheatsheet
-        </a>
-     <br>
-        <a href=" https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank">
+        </a><br>
+        <a href="https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank">
             ggplot2 - cheatsheet
         </a>
-</p>
-
+    </p>
 
     <h2>KRATEK UVOD V PROGRAM R / SHORT INTRODUCTION TO PROGRAM R</h2>
 
-
-<p>
+    <p>
         <a href="podatki/Uvod v program R.pdf" target="_blank">
             Uvod v program R
-        </a>
-    <br>
+        </a><br>
         <a href="podatki/Uvod v R.zip" target="_blank">
             Uvod v program R - podatki
         </a>
-    
-     <p>
-         
+    </p>
+
+    <p>
         <a href="podatki/Introduction to program R.pdf" target="_blank">
             Introduction to program R
-        </a>
-      <br>
+        </a><br>
         <a href="podatki/Introduction to R.zip" target="_blank">
             Introduction to program R - data
         </a>
-</p>
-    
+    </p>
+
 </div>
 
 </body>

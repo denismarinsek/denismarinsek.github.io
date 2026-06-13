@@ -1,0 +1,110 @@
+<<!DOCTYPE html>
+<html lang="sl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Predmeti / Courses</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f7f7f7;
+    color: #222;
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    padding: 40px 20px;
+    background: white;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 34px;
+}
+
+.header p {
+    margin: 8px 0 0 0;
+    color: #444;
+    font-size: 18px;
+}
+
+/* CONTENT */
+.content {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 35px 20px 50px 20px;
+}
+
+/* BACK LINK */
+.back-link {
+    display: inline-block;
+    margin-bottom: 30px;
+    text-decoration: none;
+    color: #222;
+    background: #f0f0f0;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 1px solid #d0d0d0;
+    transition: background 0.15s ease, border-color 0.15s ease;
+}
+
+.back-link:hover {
+    background: #e5e5e5;
+    border-color: #bdbdbd;
+}
+
+/* SUBJECT BUTTONS */
+.subject-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.subject-card {
+    display: block;
+    padding: 24px 18px;
+    background: white;
+    border-radius: 12px;
+    text-decoration: none;
+    color: #222;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border: 1px solid #d0d0d0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.subject-card:hover {
+    background: #eeeeee;
+    border-color: #bbbbbb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Predmeti / Courses</h1>
+    <p>Izberi predmet:</p>
+</div>
+
+<div class="content">
+    <a class="back-link" href="index.html">← Domov</a>
+
+    <div class="subject-grid">
+        <a class="subject-card" href="mtrd.html">MTRD</a>
+        <a class="subject-card" href="rmt.html">RMT</a>
+        <a class="subject-card" href="mva.html">MVA</a>
+        <a class="subject-card" href="ada.html">ADA</a>
+    </div>
+</div>
+
+</body>
+</html>

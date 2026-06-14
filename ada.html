@@ -10,6 +10,23 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="Slike/Naslovna.png">
+<link rel="shortcut icon" type="image/png" href="Slike/Naslovna.png">
+<link rel="apple-touch-icon" href="Slike/Naslovna.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Denis Marinšek" />
+<meta property="og:description" content="Docent za področje statistike – Ekonomska fakulteta, UL." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="Slike/Naslovna.png" />
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGZQE5WS5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FFGZQE5WS5');
+</script>
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -20,27 +37,35 @@
     --green-hover: #006A4E;
     --bg: #f7f7f7;
     --text: #222;
+    --muted: #444;
     --border: #d0d0d0;
     --shadow: 0 2px 8px rgba(0,0,0,0.05);
-    --shadow-hover: 0 6px 14px rgba(0,0,0,0.08);
+    --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
 }
 
 * {
     box-sizing: border-box;
 }
 
-/* ✅ BREZ SCROLL BUGOV */
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+html {
+    overflow-y: auto;
     overflow-x: hidden;
 }
 
 body {
     font-family: 'Inter', Arial, sans-serif;
+    margin: 0;
     background: var(--bg);
     color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+img, video, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* HEADER */
@@ -55,6 +80,7 @@ body {
     margin: 0;
     font-size: 34px;
     font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--green);
 }
 
@@ -65,7 +91,7 @@ body {
     padding: 35px 20px 50px 20px;
 }
 
-/* HOME */
+/* HOME IKONA */
 .back-link {
     display: inline-flex;
     align-items: center;
@@ -79,13 +105,15 @@ body {
     border-radius: 8px;
     border: 1px solid var(--border);
     font-size: 20px;
+    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
     box-shadow: var(--shadow);
-    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .back-link:hover {
     background: var(--green);
     color: white;
+    border-color: var(--green);
+    box-shadow: var(--shadow-hover);
 }
 
 /* YEAR */
@@ -93,61 +121,62 @@ body {
     font-size: 28px;
     font-weight: 700;
     margin-bottom: 20px;
+    margin-top: 0;
+    color: var(--text);
 }
 
-/* HEADINGS */
+/* NASLOVI */
 h3 {
     font-size: 22px;
+    font-weight: 600;
     margin-top: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 12px;
+    color: var(--text);
 }
 
-/* LIST */
+/* SEZNAM */
 ul {
     list-style: none;
     padding: 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 li {
     margin: 12px 0;
 }
 
-/* ✅ GUMBI (NAJBOLJ POMEMBNO) */
+/* GUMBI */
 .exam-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     white-space: nowrap;
-
+    width: 100%;
+    max-width: 280px; /* enaka širina za oba gumba */
     padding: 8px 14px;
-    font-size: 14px;
-    font-weight: 600;
-
     background: white;
     color: var(--green);
     text-decoration: none;
-
+    font-weight: 600;
+    font-size: 15px;
     border-radius: 6px;
-
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     border-left: 4px solid var(--green);
     border-right: 4px solid var(--green);
-
     box-shadow: var(--shadow);
-
-    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
-/* ✅ BREZ PREMIKA */
 .exam-button:hover {
     background: var(--green);
     color: white;
     box-shadow: var(--shadow-hover);
+    border-color: var(--green);
+    transform: none; /* nič premika */
 }
 
-/* HR */
+/* ČRTA */
 hr {
     border: none;
     border-top: 1px solid #ddd;
@@ -171,6 +200,18 @@ hr {
     h3 {
         font-size: 20px;
     }
+
+    .back-link {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .exam-button {
+        font-size: 14px;
+        padding: 7px 12px;
+        max-width: 100%;
+    }
 }
 </style>
 </head>
@@ -183,7 +224,8 @@ hr {
 
 <div class="content">
 
-    <a class="back-link" href="predmeti.html">
+    <!-- HOME IKONA -->
+    <a class="back-link" href="predmeti.html" aria-label="Nazaj na predmete">
         <i class="fa-solid fa-house"></i>
     </a>
 
@@ -191,11 +233,7 @@ hr {
 
     <h3>Exam terms</h3>
     <ul>
-        <li>
-            <a class="exam-button" href="#">
-                Exam term 1
-            </a>
-        </li>
+        <li><a href="#" class="exam-button">Exam term 1</a></li>
     </ul>
 
     <hr>

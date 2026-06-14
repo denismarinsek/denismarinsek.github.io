@@ -37,23 +37,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        :root {
+            --green: #004B49;
+            --green-hover: #006A4E;
+            --bg: #f7f7f7;
+            --text: #222;
+            --muted: #444;
+            --border: #d0d0d0;
+            --shadow: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
+        }
+
         * {
             box-sizing: border-box;
         }
 
-        html, body {
+        html {
             width: 100%;
-            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-gutter: stable both-edges;
         }
 
         body {
             font-family: 'Inter', Arial, sans-serif;
             margin: 0;
-            background: #f7f7f7;
-            color: #222;
+            width: 100%;
+            max-width: 100vw;
+            overflow-x: hidden;
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
+        }
+
+        img, video, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* SUBTILNA ANIMACIJA OB NALAGANJU */
+        .header,
+        .content,
+        footer {
+            animation: fadeUp 0.65s ease both;
+        }
+
+        .content {
+            animation-delay: 0.08s;
+        }
+
+        footer {
+            animation-delay: 0.12s;
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* HEADER */
@@ -61,6 +107,7 @@
             text-align: center;
             padding: 48px 20px 34px 20px;
             background: white;
+            border-bottom: 1px solid #ececec;
         }
 
         .header h1 {
@@ -68,6 +115,7 @@
             font-size: 36px;
             font-weight: 700;
             letter-spacing: -0.02em;
+            color: var(--green);
         }
 
         /* CONTENT */
@@ -89,16 +137,19 @@
             color: #222;
             background: #f0f0f0;
             border-radius: 8px;
-            border: 1px solid #d0d0d0;
+            border: 1px solid var(--border);
             font-size: 20px;
-            transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+            transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
             -webkit-tap-highlight-color: transparent;
+            box-shadow: var(--shadow);
         }
 
         .back-link:hover {
-            background: #e5e5e5;
-            transform: translateY(-1px);
-            border-color: #bbbbbb;
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         .back-link:active {
@@ -174,22 +225,22 @@
             justify-content: center;
             gap: 8px;
             padding: 11px 18px;
-            background: #004B49; /* Lacoste zelena */
+            background: var(--green);
             color: white;
             text-decoration: none;
             border-radius: 8px;
             font-weight: 600;
             font-size: 15px;
-            transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            border: 1px solid #004B49;
+            transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--green);
         }
 
         .link-button:hover {
-            background: #006A4E;
-            border-color: #006A4E;
-            transform: translateY(-1px);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+            background: var(--green-hover);
+            border-color: var(--green-hover);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
             text-decoration: none;
             color: white;
         }
@@ -200,15 +251,15 @@
 
         .link-button.secondary {
             background: white;
-            color: #004B49;
-            border: 1px solid #004B49;
+            color: var(--green);
+            border: 1px solid var(--green);
             box-shadow: none;
         }
 
         .link-button.secondary:hover {
-            background: #004B49;
+            background: var(--green);
             color: white;
-            border-color: #004B49;
+            border-color: var(--green);
         }
 
         .link-button.external::before {

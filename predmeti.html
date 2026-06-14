@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="sl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Predmeti / Courses</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Predmeti / Courses</title>
 
-    
- <!-- Google Analytics -->
+    <meta name="theme-color" content="#f7f7f7" />
+
+    <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGZQE5WS5"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -15,148 +16,203 @@
       gtag('config', 'G-FFGZQE5WS5');
     </script>
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
 
-<style>
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f7f7f7;
-    color: #222;
-}
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
 
-/* HEADER */
-.header {
-    text-align: center;
-    padding: 40px 20px;
-    background: white;
-}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f7f7f7;
+            color: #222;
+            line-height: 1.5;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
 
-.header h1 {
-    margin: 0;
-    font-size: 34px;
-}
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 40px 20px 30px 20px;
+            background: white;
+        }
 
-.header p {
-    margin: 8px 0 0 0;
-    color: #444;
-    font-size: 18px;
-}
+        .header h1 {
+            margin: 0;
+            font-size: 34px;
+            letter-spacing: -0.02em;
+        }
 
-/* CONTENT */
-.content {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 35px 20px 50px 20px;
-}
+        .header p {
+            margin: 8px 0 0 0;
+            color: #444;
+            font-size: 18px;
+        }
 
-/* HOME IKONA */
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 44px;
-    height: 44px;
-    margin-bottom: 25px;
-    text-decoration: none;
-    color: #222;
-    background: #f0f0f0;
-    border-radius: 8px;
-    border: 1px solid #d0d0d0;
-    font-size: 20px;
-    transition: background 0.15s ease, transform 0.15s ease;
-}
+        /* CONTENT */
+        .content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 35px 20px 50px 20px;
+        }
 
-.back-link:hover {
-    background: #e5e5e5;
-    transform: translateY(-1px);
-}
+        /* HOME IKONA */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #222;
+            background: #f0f0f0;
+            border-radius: 8px;
+            border: 1px solid #d0d0d0;
+            font-size: 20px;
+            transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+            -webkit-tap-highlight-color: transparent;
+        }
 
-/* SUBJECT GRID */
-.subject-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-    gap: 18px;
-    margin-top: 10px;
-}
+        .back-link:hover {
+            background: #e5e5e5;
+            transform: translateY(-1px);
+            border-color: #bbbbbb;
+        }
 
-/* SUBJECT CARD */
-.subject-card {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 80px;
-    padding: 24px 18px;
-    background: white;
-    border-radius: 12px;
-    text-decoration: none;
-    color: #222;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
-    border: 1px solid #d0d0d0;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-}
+        .back-link:active {
+            transform: translateY(0);
+        }
 
-.subject-card:hover {
-    background: #eeeeee;
-    border-color: #bbbbbb;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-}
+        /* SUBJECT GRID */
+        .subject-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 18px;
+            margin-top: 10px;
+        }
 
-/* MOBILE */
-@media (max-width: 700px) {
-    .header h1 {
-        font-size: 28px;
-    }
+        /* SUBJECT CARD */
+        .subject-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
+            padding: 24px 18px;
+            background: white;
+            border-radius: 12px;
+            text-decoration: none;
+            color: #222;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            border: 1px solid #d0d0d0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+            -webkit-tap-highlight-color: transparent;
+            width: 100%;
+        }
 
-    .header p {
-        font-size: 16px;
-    }
+        .subject-card:hover {
+            background: #eeeeee;
+            border-color: #bbbbbb;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
 
-    .content {
-        padding: 25px 15px 40px 15px;
-    }
+        .subject-card:active {
+            transform: translateY(0);
+        }
 
-    .subject-card {
-        min-height: 70px;
-        font-size: 18px;
-    }
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .header {
+                padding: 32px 16px 24px 16px;
+            }
 
-    .back-link {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
-    }
-}
-</style>
+            .header h1 {
+                font-size: 28px;
+                line-height: 1.15;
+            }
+
+            .header p {
+                font-size: 16px;
+            }
+
+            .content {
+                padding: 24px 16px 36px 16px;
+            }
+
+            /* EN POD DRUGIM + ENAKE ŠIRINE KOT NA INDEXU */
+            .subject-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .subject-card {
+                min-height: 64px;
+                padding: 18px 14px;
+                font-size: 15px;
+                line-height: 1.3;
+                border-radius: 10px;
+                width: 100%;
+            }
+
+            .back-link {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .header p {
+                font-size: 15px;
+            }
+
+            .subject-card {
+                font-size: 14px;
+                padding: 16px 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="header">
-    <h1>Predmeti / Courses</h1>
-</div>
-
-<div class="content">
-
-    <!-- HOME IKONA -->
-    <a class="back-link" href="index.html">
-        <i class="fa-solid fa-house"></i>
-    </a>
-
-    <div class="subject-grid">
-        <a class="subject-card" href="mtrd.html">MTRD</a>
-        <a class="subject-card" href="rmt.html">RMT</a>
-        <a class="subject-card" href="mva.html">MVA</a>
-        <a class="subject-card" href="ada.html">ADA</a>
+    <div class="header">
+        <h1>Predmeti / Courses</h1>
     </div>
 
-</div>
+    <div class="content">
+
+        <!-- HOME IKONA -->
+        <a class="back-link" href="index.html" aria-label="Nazaj na začetno stran">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <div class="subject-grid">
+            <a class="subject-card" href="mtrd.html">MTRD</a>
+            <a class="subject-card" href="rmt.html">RMT</a>
+            <a class="subject-card" href="mva.html">MVA</a>
+            <a class="subject-card" href="ada.html">ADA</a>
+        </div>
+
+    </div>
 
 </body>
 </html>

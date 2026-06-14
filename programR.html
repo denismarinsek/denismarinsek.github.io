@@ -92,6 +92,21 @@
             margin: 35px 0;
         }
 
+        /* LIST */
+        .bullet-list {
+            list-style-type: disc;
+            padding-left: 24px;
+            margin: 0 0 30px 0;
+        }
+
+        .bullet-list li {
+            margin-bottom: 30px;
+        }
+
+        .bullet-list li::marker {
+            color: #222;
+        }
+
         /* BLOCKS */
         .resource-block {
             margin-bottom: 30px;
@@ -207,32 +222,35 @@
 
     <h2>NAMESTITEV PROGRAMA R (INSTALLING PROGRAM R)</h2>
 
-        <div class="resource-block">
-        Video, kako prvič namestiti program R (how to install for the first time)
-        <div class="link-group">
-            <a class="link-button video" href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank" rel="noopener noreferrer">
-                Video
-            </a>
-        </div>
-    </div>
     <p>
         If you want to use R Studio on your computer, install the following two programs:
     </p>
 
-    <div class="resource-block">
-        <strong>Program R (software package for statistical data processing)</strong>
-        <div class="link-group">
-            <a class="link-button external" href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">
-                Open
-            </a>
-        </div>
-    </div>
+    <ul class="bullet-list">
+        <li class="resource-block">
+            <strong>Program R (software package for statistical data processing)</strong>
+            <div class="link-group">
+                <a class="link-button external" href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">
+                    Open
+                </a>
+            </div>
+        </li>
+
+        <li class="resource-block">
+            <strong>R Studio (interface for using the R program)</strong>
+            <div class="link-group">
+                <a class="link-button external" href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener noreferrer">
+                    Open
+                </a>
+            </div>
+        </li>
+    </ul>
 
     <div class="resource-block">
-        <strong>R Studio (interface for using the R program)</strong>
+        <strong>Video, kako prvič namestiti program R (how to install for the first time)</strong>
         <div class="link-group">
-            <a class="link-button external" href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener noreferrer">
-                Open
+            <a class="link-button video" href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank" rel="noopener noreferrer">
+                Video
             </a>
         </div>
     </div>

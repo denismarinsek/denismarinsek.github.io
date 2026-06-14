@@ -9,10 +9,11 @@
     <meta name="theme-color" content="#f7f7f7" />
 
     <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="Slike/Naslovna.png">
+    <link rel="shortcut icon" type="image/png" href="Slike/Naslovna.png">
     <link rel="apple-touch-icon" href="Slike/Naslovna.png">
 
     <!-- Open Graph -->
@@ -56,16 +57,18 @@
         /* HEADER */
         .header {
             text-align: center;
-            padding: 60px 20px 40px 20px;
+            padding: 64px 20px 42px 20px;
             background: white;
+            border-bottom: 1px solid #ececec;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 42px;
+            font-size: 44px;
             font-weight: 700;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.03em;
             text-transform: uppercase;
+            color: #004B49;
         }
 
         .subtitle {
@@ -82,10 +85,10 @@
         }
 
         .divider {
-            width: 42px;
+            width: 46px;
             height: 2px;
             background: #004B49;
-            margin: 22px auto;
+            margin: 24px auto;
             border-radius: 2px;
         }
 
@@ -120,23 +123,25 @@
             background: #004B49;
             text-decoration: none;
             font-size: 30px;
-            border-radius: 8px;
-            opacity: 0.95;
+            border-radius: 10px;
+            opacity: 0.96;
             transition: all 0.15s ease;
             -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
 
         .linkedin-icon:hover {
             background: #006A4E;
             opacity: 1;
             transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.10);
         }
 
         /* CONTENT */
         .content {
             max-width: 1000px;
             margin: 0 auto;
-            padding: 40px 20px 60px 20px;
+            padding: 42px 20px 64px 20px;
         }
 
         .subject-grid {
@@ -149,7 +154,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 80px;
+            min-height: 82px;
             padding: 22px 18px;
             background: white;
             border-radius: 12px;
@@ -163,7 +168,7 @@
             border-left: 4px solid #004B49;
             border-right: 4px solid #004B49;
             box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: all 0.15s ease;
+            transition: transform 0.16s ease, background 0.16s ease, box-shadow 0.16s ease, color 0.16s ease, border-color 0.16s ease;
             -webkit-tap-highlight-color: transparent;
         }
 
@@ -172,7 +177,7 @@
             color: white;
             border-color: #004B49;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            box-shadow: 0 6px 14px rgba(0,0,0,0.10);
         }
 
         .subject-card:active {
@@ -181,20 +186,21 @@
 
         footer {
             text-align: center;
-            padding: 16px;
+            padding: 18px;
             font-size: 12px;
             color: #777;
             border-top: 1px solid #e5e5e5;
+            background: #f7f7f7;
         }
 
         /* MOBILE */
         @media (max-width: 700px) {
             .header {
-                padding: 40px 16px 30px 16px;
+                padding: 42px 16px 32px 16px;
             }
 
             .header h1 {
-                font-size: 30px;
+                font-size: 32px;
             }
 
             .subtitle {
@@ -210,7 +216,7 @@
             }
 
             .content {
-                padding: 30px 16px 40px 16px;
+                padding: 30px 16px 42px 16px;
             }
 
             .subject-grid {
@@ -220,8 +226,29 @@
             .subject-card {
                 min-height: 64px;
                 font-size: 15px;
-                border-left-width: 4px;
-                border-right-width: 4px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .header h1 {
+                font-size: 28px;
+            }
+
+            .subtitle {
+                font-size: 16px;
+            }
+
+            .subtitle-en {
+                font-size: 14px;
+            }
+
+            .affiliation {
+                font-size: 15px;
+            }
+
+            .subject-card {
+                font-size: 14px;
+                padding: 18px 14px;
             }
         }
     </style>

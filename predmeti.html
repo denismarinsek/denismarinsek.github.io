@@ -7,13 +7,15 @@
 
     <meta name="theme-color" content="#f7f7f7" />
 
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
- <!-- Favicon / ikona -->
+    <!-- Favicon / ikona -->
     <link rel="icon" type="image/png" href="Slike/Naslovna.png">
     <link rel="shortcut icon" type="image/png" href="Slike/Naslovna.png">
     <link rel="apple-touch-icon" href="Slike/Naslovna.png">
 
- <!-- Open Graph -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Denis Marinšek" />
     <meta property="og:description" content="Docent za področje statistike – Ekonomska fakulteta, UL." />
     <meta property="og:type" content="website" />
@@ -32,36 +34,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        :root {
+            --green: #004B49;
+            --green-hover: #006A4E;
+            --bg: #f7f7f7;
+            --text: #222;
+            --muted: #444;
+            --border: #d0d0d0;
+            --shadow: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
+        }
+
         * {
             box-sizing: border-box;
         }
 
-        html, body {
+        html {
             width: 100%;
-            overflow-x: hidden;
+            overflow-y: scroll;
+            scrollbar-gutter: stable both-edges;
         }
 
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             margin: 0;
-            background: #f7f7f7;
-            color: #222;
-            line-height: 1.5;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
-            text-rendering: optimizeLegibility;
         }
 
         /* HEADER */
         .header {
             text-align: center;
-            padding: 40px 20px 30px 20px;
+            padding: 48px 20px 32px 20px;
             background: white;
+            border-bottom: 1px solid #ececec;
         }
 
         .header h1 {
             margin: 0;
             font-size: 34px;
             letter-spacing: -0.02em;
+            font-weight: 700;
+            color: var(--green); /* ZELENA */
         }
 
         .header p {
@@ -89,16 +105,17 @@
             color: #222;
             background: #f0f0f0;
             border-radius: 8px;
-            border: 1px solid #d0d0d0;
+            border: 1px solid var(--border);
             font-size: 20px;
-            transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
-            -webkit-tap-highlight-color: transparent;
+            transition: all 0.18s ease;
+            box-shadow: var(--shadow);
         }
 
         .back-link:hover {
-            background: #e5e5e5;
-            transform: translateY(-1px);
-            border-color: #bbbbbb;
+            background: var(--green);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
         }
 
         .back-link:active {
@@ -123,22 +140,27 @@
             background: white;
             border-radius: 12px;
             text-decoration: none;
-            color: #222;
+            color: var(--text);
             font-size: 16px;
-            font-weight: bold;
+            font-weight: 600;
             text-align: center;
-            border: 1px solid #d0d0d0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
-            -webkit-tap-highlight-color: transparent;
+
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            border-left: 4px solid var(--green);
+            border-right: 4px solid var(--green);
+
+            box-shadow: var(--shadow);
+            transition: transform 0.18s ease, background 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
+
             width: 100%;
         }
 
         .subject-card:hover {
-            background: #eeeeee;
-            border-color: #bbbbbb;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            background: var(--green);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-hover);
         }
 
         .subject-card:active {
@@ -164,7 +186,6 @@
                 padding: 24px 16px 36px 16px;
             }
 
-            /* EN POD DRUGIM + ENAKE ŠIRINE KOT NA INDEXU */
             .subject-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
@@ -174,9 +195,7 @@
                 min-height: 64px;
                 padding: 18px 14px;
                 font-size: 15px;
-                line-height: 1.3;
                 border-radius: 10px;
-                width: 100%;
             }
 
             .back-link {

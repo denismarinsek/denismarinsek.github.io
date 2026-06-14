@@ -59,6 +59,18 @@ html {
     flex-wrap: wrap;     /* če zmanjka prostora na mobile */
 }
 
+  
+.row-two {
+    display {    display: flex;
+    flex: 1 1 0;
+    min-width: 0;
+    white-space: nowrap;
+}
+    gap: 10px;
+    flex-wrap: nowrap;   /* NE prelomi v novo vrstico */
+}
+
+
 
 body {
     font-family: 'Inter', Arial, sans-serif;
@@ -251,7 +263,7 @@ hr {
 
     <h3>Kolokviji</h3>
     <ul>
-        <li class="row"><a href="https://rpubs.com/DenisMarinsek/1365835" class="exam-button">1. kolokvij</a>  <a href="https://rpubs.com/DenisMarinsek/1439067" class="exam-button">1. kolokvij, izredni</a></li>
+        <li class="row row-two"><a href="https://rpubs.com/DenisMarinsek/1365835" class="exam-button">1. kolokvij</a>  <a href="https://rpubs.com/DenisMarinsek/1439067" class="exam-button">1. kolokvij, izredni</a></li>
         <li class="row"><a href="https://rpubs.com/DenisMarinsek/1377315" class="exam-button">2. kolokvij</a>  <a href="#" class="exam-button">2. kolokvij, izredni</a></li>
     </ul>
 

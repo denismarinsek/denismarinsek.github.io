@@ -10,6 +10,23 @@
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="Slike/Naslovna.png">
+<link rel="shortcut icon" type="image/png" href="Slike/Naslovna.png">
+<link rel="apple-touch-icon" href="Slike/Naslovna.png">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Denis Marinšek" />
+<meta property="og:description" content="Docent za področje statistike – Ekonomska fakulteta, UL." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="Slike/Naslovna.png" />
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGZQE5WS5"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-FFGZQE5WS5');
+</script>
 
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -20,6 +37,7 @@
     --green-hover: #006A4E;
     --bg: #f7f7f7;
     --text: #222;
+    --muted: #444;
     --border: #d0d0d0;
     --shadow: 0 2px 8px rgba(0,0,0,0.05);
     --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
@@ -29,11 +47,25 @@
     box-sizing: border-box;
 }
 
+html {
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
 body {
     font-family: 'Inter', Arial, sans-serif;
     margin: 0;
     background: var(--bg);
     color: var(--text);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+}
+
+img, video, svg {
+    max-width: 100%;
+    height: auto;
 }
 
 /* HEADER */
@@ -48,6 +80,7 @@ body {
     margin: 0;
     font-size: 34px;
     font-weight: 700;
+    letter-spacing: -0.02em;
     color: var(--green);
 }
 
@@ -79,6 +112,7 @@ body {
 .back-link:hover {
     background: var(--green);
     color: white;
+    border-color: var(--green);
     box-shadow: var(--shadow-hover);
 }
 
@@ -88,6 +122,7 @@ body {
     font-weight: 700;
     margin-bottom: 20px;
     margin-top: 0;
+    color: var(--text);
 }
 
 /* NASLOVI */
@@ -96,6 +131,7 @@ h3 {
     font-weight: 600;
     margin-top: 30px;
     margin-bottom: 12px;
+    color: var(--text);
 }
 
 /* SEZNAM */
@@ -115,30 +151,29 @@ li {
     align-items: center;
     justify-content: center;
     white-space: nowrap;
-
+    width: 100%;
+    max-width: 280px; /* enaka širina za oba gumba */
     padding: 8px 14px;
     background: white;
     color: var(--green);
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-
     border-radius: 6px;
-
     border-top: 1px solid var(--border);
     border-bottom: 1px solid var(--border);
     border-left: 4px solid var(--green);
     border-right: 4px solid var(--green);
-
     box-shadow: var(--shadow);
-
-    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease;
+    transition: background 0.18s ease, color 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
 }
 
 .exam-button:hover {
     background: var(--green);
     color: white;
     box-shadow: var(--shadow-hover);
+    border-color: var(--green);
+    transform: none; /* nič premika */
 }
 
 /* ČRTA */
@@ -175,6 +210,7 @@ hr {
     .exam-button {
         font-size: 14px;
         padding: 7px 12px;
+        max-width: 100%;
     }
 }
 </style>

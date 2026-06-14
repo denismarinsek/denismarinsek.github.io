@@ -20,7 +20,7 @@
 
     <!-- Open Graph -->
     <meta property="og:title" content="CFA" />
-    <meta property="og:description" content="Docent za področje statistike – Ekonomska fakulteta, UL." />
+    <meta property="og:description" content="CFA – izkušnje, potek izpitov, nasveti in opis pridobivanja CFA naziva." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="Slike/Naslovna.png" />
 
@@ -33,7 +33,7 @@
       gtag('config', 'G-FFGZQE5WS5');
     </script>
 
-    <!-- Font Awesome za home ikono -->
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
@@ -42,7 +42,6 @@
             --green-hover: #006A4E;
             --bg: #f7f7f7;
             --text: #222;
-            --muted: #444;
             --border: #d0d0d0;
             --shadow: 0 2px 8px rgba(0,0,0,0.05);
             --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
@@ -52,18 +51,20 @@
             box-sizing: border-box;
         }
 
-        html {
+        html, body {
+            margin: 0;
+            padding: 0;
             width: 100%;
-            overflow-y: scroll;
-            scrollbar-gutter: stable;
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-y: auto; /* samo en običajen scrollbar */
         }
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            margin: 0;
-            width: 100%;
             min-height: 100vh;
-            overflow-x: hidden;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;
@@ -76,34 +77,12 @@
             height: auto;
         }
 
-        /* SUBTILNA ANIMACIJA OB NALAGANJU */
-        .header,
-        .content {
-            animation: fadeUp 0.65s ease both;
-        }
-
-        .content {
-            animation-delay: 0.08s;
-        }
-
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
         /* HEADER */
         .header {
             text-align: center;
             padding: 48px 20px 34px 20px;
             background: white;
             border-bottom: 1px solid #ececec;
-            width: 100%;
         }
 
         .header h1 {
@@ -114,11 +93,11 @@
             color: var(--green);
         }
 
+        /* CONTENT */
         .content {
             max-width: 900px;
             margin: 0 auto;
             padding: 35px 20px 50px 20px;
-            width: 100%;
         }
 
         /* HOME LINK */
@@ -160,7 +139,6 @@
             font-size: 16px;
         }
 
-        /* JUSTIFY samo na računalniku */
         @media (min-width: 700px) {
             p {
                 text-align: justify;

@@ -1,1 +1,250 @@
+<!DOCTYPE html>
+<html lang="sl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>CV</title>
 
+    <meta name="description" content="CV – življenjepis Denisa Marinška." />
+    <meta name="theme-color" content="#f7f7f7" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon / ikona -->
+    <link rel="icon" type="image/png" href="Slike/Naslovna.png">
+    <link rel="shortcut icon" type="image/png" href="Slike/Naslovna.png">
+    <link rel="apple-touch-icon" href="Slike/Naslovna.png">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="CV" />
+    <meta property="og:description" content="CV – življenjepis Denisa Marinška." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="Slike/Naslovna.png" />
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGZQE5WS5"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FFGZQE5WS5');
+    </script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        :root {
+            --green: #004B49;
+            --green-hover: #006A4E;
+            --bg: #f7f7f7;
+            --text: #222;
+            --muted: #555;
+            --border: #d0d0d0;
+            --shadow: 0 2px 8px rgba(0,0,0,0.05);
+            --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        html {
+            overflow-y: auto;
+        }
+
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+        }
+
+        img, video, svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        /* HEADER */
+        .header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            color: var(--green);
+        }
+
+        /* CONTENT */
+        .content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 35px 20px 50px 20px;
+        }
+
+        /* HOME LINK */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            margin-bottom: 25px;
+            text-decoration: none;
+            color: #222;
+            background: #f0f0f0;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            font-size: 20px;
+            transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: var(--shadow);
+        }
+
+        .back-link:hover {
+            background: var(--green);
+            color: white;
+            border-color: var(--green);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .back-link:active {
+            transform: translateY(0);
+        }
+
+        /* PLACEHOLDER BOX */
+        .placeholder-box {
+            background: white;
+            border: 1px solid #ececec;
+            border-left: 4px solid var(--green);
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            padding: 24px;
+            margin-bottom: 22px;
+        }
+
+        .placeholder-box h2 {
+            margin: 0 0 10px 0;
+            color: var(--green);
+            font-size: 22px;
+            letter-spacing: -0.02em;
+        }
+
+        .placeholder-box p {
+            margin: 0;
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text);
+        }
+
+        .muted-note {
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+            .header {
+                padding: 32px 16px 24px 16px;
+            }
+
+            .header h1 {
+                font-size: 28px;
+                line-height: 1.15;
+            }
+
+            .content {
+                padding: 24px 16px 36px 16px;
+            }
+
+            .back-link {
+                width: 40px;
+                height: 40px;
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .placeholder-box {
+                padding: 18px;
+            }
+
+            .placeholder-box h2 {
+                font-size: 19px;
+            }
+
+            .placeholder-box p {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 420px) {
+            .header h1 {
+                font-size: 24px;
+            }
+
+            .placeholder-box h2 {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h1>CV</h1>
+    </div>
+
+    <div class="content">
+
+        <a class="back-link" href="index.html" aria-label="Domov">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <div class="placeholder-box">
+            <h2>Življenjepis</h2>
+            <p class="muted-note">
+                Tukaj boš kasneje dodal vsebino CV-ja. Stran je že postavljena v istem slogu kot ostale podstrani,
+                tako da lahko zdaj samo vstaviš besedilo, sezname ali PDF povezavo.
+            </p>
+        </div>
+
+        <div class="placeholder-box">
+            <h2>Predlagana struktura</h2>
+            <p>
+                1. Izobrazba<br>
+                2. Zaposlitve in delovne izkušnje<br>
+                3. Pedagoško delo<br>
+                4. Raziskovalno delo<br>
+                5. Objave<br>
+                6. Projekti<br>
+                7. Nagrade in priznanja<br>
+                8. Druge informacije
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
+``

@@ -52,18 +52,16 @@
             box-sizing: border-box;
         }
 
-        html {
+        html, body {
+            margin: 0;
+            padding: 0;
             width: 100%;
-            overflow-y: scroll;          /* vedno rezervira prostor za scrollbar */
-            scrollbar-gutter: stable;    /* NE both-edges, ker povzroča skakanje */
+            overflow-x: hidden;
         }
 
         body {
             font-family: 'Inter', Arial, sans-serif;
-            margin: 0;
-            width: 100%;
             min-height: 100vh;
-            overflow-x: hidden;
             background: var(--bg);
             color: var(--text);
             line-height: 1.6;

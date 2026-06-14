@@ -52,7 +52,8 @@
 
         html {
             width: 100%;
-            overflow-x: hidden;
+            overflow-y: scroll;            /* vedno rezervira prostor za scrollbar */
+            scrollbar-gutter: stable;      /* prepreči premik layouta */
         }
 
         body {

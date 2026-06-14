@@ -67,7 +67,7 @@
             transform: translateY(-1px);
         }
 
-        /* TEXT */
+        /* HEADINGS */
         h2 {
             margin-top: 40px;
             margin-bottom: 18px;
@@ -92,9 +92,9 @@
             margin: 35px 0;
         }
 
-        /* ====== NEW: BLOCKS + BUTTON LINKS ====== */
+        /* BLOCKS */
         .resource-block {
-            margin-bottom: 28px;
+            margin-bottom: 30px;
         }
 
         .resource-block strong {
@@ -102,8 +102,19 @@
             margin-bottom: 10px;
         }
 
+        .link-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        /* BUTTONS */
         .link-button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
             padding: 11px 18px;
             background: #0b57d0;
             color: white;
@@ -134,11 +145,25 @@
             color: #222;
         }
 
-        .link-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 8px;
+        .link-button.external::before {
+            content: "\f35d"; /* fa-arrow-up-right-from-square */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        .link-button.download::before {
+            content: "\f019"; /* fa-download */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        .link-button.video::before {
+            content: "\f144"; /* fa-circle-play */
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            font-size: 14px;
         }
 
         /* MOBILE */
@@ -152,18 +177,17 @@
             }
 
             .resource-block {
-                margin-bottom: 34px;
-            }
-
-            .link-button {
-                width: 100%;
-                text-align: center;
-                box-sizing: border-box;
+                margin-bottom: 36px;
             }
 
             .link-group {
                 flex-direction: column;
                 gap: 10px;
+            }
+
+            .link-button {
+                width: 100%;
+                box-sizing: border-box;
             }
         }
     </style>
@@ -177,7 +201,7 @@
 
 <div class="content">
 
-    <a class="back-link" href="index.html">
+    <a class="back-link" href="index.html" aria-label="Nazaj na začetno stran">
         <i class="fa-solid fa-house"></i>
     </a>
 
@@ -191,8 +215,8 @@
     <div class="resource-block">
         <strong>Program R (software package for statistical data processing):</strong>
         <div class="link-group">
-            <a class="link-button" href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">
-                POVEZAVA / LINK
+            <a class="link-button external" href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">
+                Odpri
             </a>
         </div>
     </div>
@@ -200,8 +224,8 @@
     <div class="resource-block">
         <strong>R Studio (interface for using the R program):</strong>
         <div class="link-group">
-            <a class="link-button" href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener noreferrer">
-                POVEZAVA / LINK
+            <a class="link-button external" href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener noreferrer">
+                Odpri
             </a>
         </div>
     </div>
@@ -209,8 +233,8 @@
     <div class="resource-block">
         <strong>Video, kako prvič namestiti program R (how to install for the first time):</strong>
         <div class="link-group">
-            <a class="link-button" href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank" rel="noopener noreferrer">
-                POVEZAVA / LINK
+            <a class="link-button video" href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank" rel="noopener noreferrer">
+                Video
             </a>
         </div>
     </div>
@@ -221,10 +245,10 @@
 
     <div class="resource-block">
         <div class="link-group">
-            <a class="link-button secondary" href="podatki/r_funkcije_si_v2.0.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="podatki/r_funkcije_si_v2.0.pdf" target="_blank" rel="noopener noreferrer">
                 R funkcije za Ekonomiste, V2.0
             </a>
-            <a class="link-button secondary" href="podatki/r_funkcije_eng_v2.0.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="podatki/r_funkcije_eng_v2.0.pdf" target="_blank" rel="noopener noreferrer">
                 R functions for Economists, V2.0
             </a>
         </div>
@@ -232,13 +256,13 @@
 
     <div class="resource-block">
         <div class="link-group">
-            <a class="link-button secondary" href="https://rstudio.github.io/cheatsheets/rstudio-ide.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/rstudio-ide.pdf" target="_blank" rel="noopener noreferrer">
                 RStudio - cheatsheet
             </a>
-            <a class="link-button secondary" href="https://rstudio.github.io/cheatsheets/rmarkdown.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/rmarkdown.pdf" target="_blank" rel="noopener noreferrer">
                 R Markdown - cheatsheet
             </a>
-            <a class="link-button secondary" href="https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank" rel="noopener noreferrer">
                 ggplot2 - cheatsheet
             </a>
         </div>
@@ -248,10 +272,10 @@
 
     <div class="resource-block">
         <div class="link-group">
-            <a class="link-button secondary" href="podatki/Uvod v program R.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="podatki/Uvod v program R.pdf" target="_blank" rel="noopener noreferrer">
                 Uvod v program R
             </a>
-            <a class="link-button secondary" href="podatki/Uvod v R.zip" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="podatki/Uvod v R.zip" target="_blank" rel="noopener noreferrer">
                 Uvod v program R - podatki
             </a>
         </div>
@@ -259,10 +283,10 @@
 
     <div class="resource-block">
         <div class="link-group">
-            <a class="link-button secondary" href="podatki/Introduction to program R.pdf" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="podatki/Introduction to program R.pdf" target="_blank" rel="noopener noreferrer">
                 Introduction to program R
             </a>
-            <a class="link-button secondary" href="podatki/Introduction to R.zip" target="_blank" rel="noopener noreferrer">
+            <a class="link-button secondary download" href="podatki/Introduction to R.zip" target="_blank" rel="noopener noreferrer">
                 Introduction to program R - data
             </a>
         </div>

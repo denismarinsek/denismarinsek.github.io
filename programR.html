@@ -54,15 +54,15 @@
 
         html {
             width: 100%;
-            overflow-y: scroll;
-            scrollbar-gutter: stable both-edges;
+            overflow-y: scroll;          /* vedno rezervira prostor za scrollbar */
+            scrollbar-gutter: stable;    /* NE both-edges, ker povzroča skakanje */
         }
 
         body {
             font-family: 'Inter', Arial, sans-serif;
             margin: 0;
             width: 100%;
-            max-width: 100vw;
+            min-height: 100vh;
             overflow-x: hidden;
             background: var(--bg);
             color: var(--text);
@@ -108,6 +108,7 @@
             padding: 48px 20px 34px 20px;
             background: white;
             border-bottom: 1px solid #ececec;
+            width: 100%;
         }
 
         .header h1 {
@@ -123,6 +124,7 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 35px 20px 50px 20px;
+            width: 100%;
         }
 
         /* HOME BUTTON */

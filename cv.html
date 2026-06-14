@@ -43,6 +43,7 @@
             --bg: #f7f7f7;
             --text: #222;
             --muted: #555;
+            --muted-2: #777;
             --border: #d0d0d0;
             --shadow: 0 2px 8px rgba(0,0,0,0.05);
             --shadow-hover: 0 8px 18px rgba(0,0,0,0.10);
@@ -68,7 +69,7 @@
             min-height: 100vh;
             background: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.65;
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
         }
@@ -81,7 +82,7 @@
         /* HEADER */
         .header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 42px 20px;
             background: white;
             border-bottom: 1px solid #ececec;
         }
@@ -94,11 +95,18 @@
             color: var(--green);
         }
 
+        .header .subtitle {
+            margin-top: 10px;
+            font-size: 16px;
+            color: var(--muted-2);
+            font-weight: 400;
+        }
+
         /* CONTENT */
         .content {
-            max-width: 900px;
+            max-width: 980px;
             margin: 0 auto;
-            padding: 35px 20px 50px 20px;
+            padding: 36px 20px 56px 20px;
         }
 
         /* HOME LINK */
@@ -108,14 +116,14 @@
             justify-content: center;
             width: 44px;
             height: 44px;
-            margin-bottom: 25px;
+            margin-bottom: 26px;
             text-decoration: none;
             color: #222;
             background: #f0f0f0;
             border-radius: 8px;
             border: 1px solid var(--border);
             font-size: 20px;
-            transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+            transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease, color 0.18s ease;
             -webkit-tap-highlight-color: transparent;
             box-shadow: var(--shadow);
         }
@@ -132,34 +140,83 @@
             transform: translateY(0);
         }
 
-        /* PLACEHOLDER BOX */
-        .placeholder-box {
+        /* CV SECTIONS */
+        .cv-section {
             background: white;
             border: 1px solid #ececec;
             border-left: 4px solid var(--green);
             border-radius: 12px;
             box-shadow: var(--shadow);
-            padding: 24px;
+            padding: 26px 26px 22px 26px;
             margin-bottom: 22px;
         }
 
-        .placeholder-box h2 {
-            margin: 0 0 10px 0;
+        .cv-section h2 {
+            margin: 0 0 18px 0;
             color: var(--green);
             font-size: 22px;
+            font-weight: 700;
             letter-spacing: -0.02em;
         }
 
-        .placeholder-box p {
+        .cv-entry {
+            margin-bottom: 22px;
+        }
+
+        .cv-entry:last-child {
+            margin-bottom: 0;
+        }
+
+        .cv-date {
+            display: inline-block;
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--green);
+            background: #eef7f6;
+            border: 1px solid #d7ecea;
+            padding: 4px 10px;
+            border-radius: 999px;
+            margin-bottom: 10px;
+        }
+
+        .cv-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--text);
+            margin: 0 0 8px 0;
+        }
+
+        .cv-text {
             margin: 0;
             font-size: 16px;
-            line-height: 1.7;
+            line-height: 1.75;
             color: var(--text);
         }
 
-        .muted-note {
-            color: var(--muted);
-            font-style: italic;
+        .cv-text + .cv-text {
+            margin-top: 10px;
+        }
+
+        .cv-list {
+            margin: 10px 0 0 0;
+            padding-left: 22px;
+        }
+
+        .cv-list li {
+            margin-bottom: 6px;
+        }
+
+        .cv-link {
+            color: var(--green);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0,75,73,0.25);
+            transition: color 0.18s ease, border-color 0.18s ease;
+            word-break: break-word;
+        }
+
+        .cv-link:hover {
+            color: var(--green-hover);
+            border-color: var(--green-hover);
         }
 
         /* MOBILE */
@@ -173,8 +230,12 @@
                 line-height: 1.15;
             }
 
+            .header .subtitle {
+                font-size: 14px;
+            }
+
             .content {
-                padding: 24px 16px 36px 16px;
+                padding: 24px 16px 40px 16px;
             }
 
             .back-link {
@@ -184,16 +245,20 @@
                 margin-bottom: 20px;
             }
 
-            .placeholder-box {
-                padding: 18px;
+            .cv-section {
+                padding: 20px 18px 18px 18px;
+                margin-bottom: 18px;
             }
 
-            .placeholder-box h2 {
+            .cv-section h2 {
                 font-size: 19px;
+                margin-bottom: 14px;
             }
 
-            .placeholder-box p {
+            .cv-title,
+            .cv-text {
                 font-size: 15px;
+                line-height: 1.7;
             }
         }
 
@@ -202,7 +267,7 @@
                 font-size: 24px;
             }
 
-            .placeholder-box h2 {
+            .cv-section h2 {
                 font-size: 18px;
             }
         }
@@ -213,6 +278,7 @@
 
     <div class="header">
         <h1>CV</h1>
+        <div class="subtitle">Denis Marinšek</div>
     </div>
 
     <div class="content">
@@ -221,30 +287,126 @@
             <i class="fa-solid fa-house"></i>
         </a>
 
-        <div class="placeholder-box">
-            <h2>Življenjepis</h2>
-            <p class="muted-note">
-                Tukaj boš kasneje dodal vsebino CV-ja. Stran je že postavljena v istem slogu kot ostale podstrani,
-                tako da lahko zdaj samo vstaviš besedilo, sezname ali PDF povezavo.
-            </p>
+        <div class="cv-section">
+            <h2>Work experience</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">2023 – present</div>
+                <div class="cv-title">Visiting lecturer at Vienna University of Economics and Business (WU)</div>
+                <p class="cv-text">Applied Data Analysis in Business with program R (Undergraduate Study, English)</p>
+                <p class="cv-text">Teaching undergraduate students.</p>
+                <p class="cv-text">Wirtschaftsuniversität Wien, Austria</p>
+                <p class="cv-text">Sector: Education</p>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2017 – present</div>
+                <div class="cv-title">Assistant professor of Statistics at School of Economics and Business, University of Ljubljana</div>
+                <ul class="cv-list">
+                    <li>Research Methodology (PhD students, English)</li>
+                    <li>Multivariate Analysis (Graduate Study, English)</li>
+                    <li>Research Methods and Techniques (Graduate Study, Slovenian, English)</li>
+                    <li>Quantitative methods II (Graduate Study, English)</li>
+                    <li>Statistical Analysis (Undergraduate Study, Slovenian, English)</li>
+                    <li>Microeconomics &amp; Math (Graduate Study, English)</li>
+                </ul>
+                <p class="cv-text">Teaching undergraduate and graduate students.</p>
+                <p class="cv-text">Research on the application of statistics in business and the economy.</p>
+                <p class="cv-text">School of Economics and Business, University of Ljubljana, Slovenia</p>
+                <p class="cv-text">Sector: Education, Research</p>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2009 – 2016</div>
+                <div class="cv-title">Teaching Assistant of Statistics at School of Economics and Business, University of Ljubljana</div>
+                <ul class="cv-list">
+                    <li>Research Methodology (PhD students, English)</li>
+                    <li>Multivariate Analysis (Graduate Study, English)</li>
+                    <li>Research Methods and Techniques (Graduate Study, English)</li>
+                    <li>Statistical Analysis (Undergraduate Study, English)</li>
+                    <li>Microeconomics &amp; Math (Graduate Study, English)</li>
+                </ul>
+                <p class="cv-text">Teaching undergraduate and graduate students.</p>
+                <p class="cv-text">Research on the application of statistics in business and the economy.</p>
+                <p class="cv-text">School of Economics and Business, University of Ljubljana, Slovenia</p>
+                <p class="cv-text">Sector: Education, Research</p>
+            </div>
         </div>
 
-        <div class="placeholder-box">
-            <h2>Predlagana struktura</h2>
-            <p>
-                1. Izobrazba<br>
-                2. Zaposlitve in delovne izkušnje<br>
-                3. Pedagoško delo<br>
-                4. Raziskovalno delo<br>
-                5. Objave<br>
-                6. Projekti<br>
-                7. Nagrade in priznanja<br>
-                8. Druge informacije
-            </p>
+        <div class="cv-section">
+            <h2>Education</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">2011 – 2015</div>
+                <div class="cv-title">PhD</div>
+                <p class="cv-text">Interdisciplinary Doctoral Programme in Statistics – Module Economics and Business Statistics</p>
+                <p class="cv-text"><b>Dissertation title:</b> The Impact of Indebtedness on a Firm’s Performance: Evidence from European Countries</p>
+                <p class="cv-text"><b>Advisor:</b> prof. Marko Pahor, PhD</p>
+                <p class="cv-text"><b>Co-advisor:</b> prof. Dušan Mramor, PhD</p>
+                <p class="cv-text"><b>Committee:</b> prof. Christopher Winship, PhD (Harvard University), prof. Miroslav Verbič, PhD, prof. Aleš Žiberna, PhD</p>
+                <p class="cv-text"><b>Average grade:</b> 9.33 / 10.00</p>
+                <p class="cv-text"><b>Additional award:</b> Scholarship Innovative Scheme for the co-financing of PhD studies to promote social changes (2011–present)</p>
+                <p class="cv-text">University of Ljubljana, Slovenia</p>
+                <p class="cv-text">3rd Bologna Degree</p>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2009 – 2011</div>
+                <div class="cv-title">Master of Science</div>
+                <p class="cv-text">International Master in Business Administration – Module Finance</p>
+                <p class="cv-text"><b>Master thesis title:</b> Financial Behavior of Slovenian Manufacturing Companies in period 2006–2009</p>
+                <p class="cv-text"><b>Advisor:</b> prof. Aljoša Valentinčič, PhD – Grade 10</p>
+                <p class="cv-text"><b>Average grade:</b> 9.20 / 10.00</p>
+                <p class="cv-text"><b>Additional award:</b> Faculty Prešeren's Award for master thesis (2012)</p>
+                <p class="cv-text">Faculty of Economics, University of Ljubljana, Slovenia</p>
+                <p class="cv-text">2nd Bologna Degree</p>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">2006 – 2009</div>
+                <div class="cv-title">Bachelor's degree</div>
+                <p class="cv-text">Mathematical Economics</p>
+                <p class="cv-text"><b>Dissertation title:</b> Value Investing</p>
+                <p class="cv-text"><b>Advisor:</b> prof. Aljoša Valentinčič, PhD – Grade 10</p>
+                <p class="cv-text"><b>Average grade:</b> 9.78 / 10.00</p>
+                <p class="cv-text"><b>Additional awards:</b></p>
+                <ul class="cv-list">
+                    <li>Faculty Prešeren's Award for bachelor thesis (2009)</li>
+                    <li>Praise of Faculty of Economics for study achievement during the undergraduate study (2009)</li>
+                    <li>Praise of Faculty of Economics for study achievements in years 06/07, 07/08 and 08/09</li>
+                    <li>Zois Scholarship (2007–2011)</li>
+                </ul>
+                <p class="cv-text">Faculty of Economics, University of Ljubljana, Slovenia</p>
+                <p class="cv-text">1st Bologna Degree</p>
+            </div>
+        </div>
+
+        <div class="cv-section">
+            <h2>Additional qualifications</h2>
+
+            <div class="cv-entry">
+                <div class="cv-date">June, 2013</div>
+                <div class="cv-title">CFA Level III</div>
+                <p class="cv-text"><b>Institution:</b> CFA Institute</p>
+                <p class="cv-text"><b>Key subjects:</b> Ethical and Professional Standards, Quantitative Methods, Analysis of Equity Investments, Analysis of Fixed Income Investments, Derivatives, Alternative Investments, Portfolio Management and Wealth Planning.</p>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">June, 2012</div>
+                <div class="cv-title">CFA Level II</div>
+                <p class="cv-text"><b>Institution:</b> CFA Institute</p>
+                <p class="cv-text"><b>Key subjects:</b> Ethical and Professional Standards, Quantitative Methods, Economics, Financial Statement Analysis, Corporate Finance, Analysis of Equity Investments, Analysis of Fixed Income Investments, Derivatives, Portfolio Management.</p>
+            </div>
+
+            <div class="cv-entry">
+                <div class="cv-date">June, 2011</div>
+                <div class="cv-title">CFA Level I</div>
+                <p class="cv-text"><b>Institution:</b> CFA Institute</p>
+                <p class="cv-text"><b>Key subjects:</b> Ethical and Professional Standards, Quantitative Methods, Economics, Financial Statement Analysis, Corporate Finance, Analysis of Equity Investments, Analysis of Fixed Income Investments, Derivatives, Alternative Investments and Portfolio Management.</p>
+            </div>
         </div>
 
     </div>
 
 </body>
 </html>
-``

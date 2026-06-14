@@ -2,20 +2,28 @@
 <html lang="sl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>PROGRAM R</title>
-    
- <!-- Favicon / ikona -->
+
+    <meta name="description" content="Program R – navodila za namestitev, povzetki funkcij, cheatsheets in uvod v program R." />
+    <meta name="theme-color" content="#f7f7f7" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Favicon / ikona -->
     <link rel="icon" type="image/png" href="Slike/Naslovna.png">
     <link rel="shortcut icon" type="image/png" href="Slike/Naslovna.png">
     <link rel="apple-touch-icon" href="Slike/Naslovna.png">
 
- <!-- Open Graph -->
-    <meta property="og:title" content="Denis Marinšek" />
-    <meta property="og:description" content="Docent za področje statistike – Ekonomska fakulteta, UL." />
+    <!-- Open Graph -->
+    <meta property="og:title" content="PROGRAM R" />
+    <meta property="og:description" content="Navodila za namestitev, povzetki funkcij, cheatsheets in uvod v program R." />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="Slike/Naslovna.png" />
-    
+
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FFGZQE5WS5"></script>
     <script>
@@ -29,23 +37,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', Arial, sans-serif;
             margin: 0;
             background: #f7f7f7;
             color: #222;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
         }
 
         /* HEADER */
         .header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 48px 20px 34px 20px;
             background: white;
         }
 
         .header h1 {
             margin: 0;
-            font-size: 34px;
+            font-size: 36px;
+            font-weight: 700;
+            letter-spacing: -0.02em;
         }
 
         /* CONTENT */
@@ -53,7 +75,6 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 35px 20px 50px 20px;
-            line-height: 1.6;
         }
 
         /* HOME BUTTON */
@@ -70,24 +91,34 @@
             border-radius: 8px;
             border: 1px solid #d0d0d0;
             font-size: 20px;
-            transition: background 0.15s ease, transform 0.15s ease;
+            transition: background 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+            -webkit-tap-highlight-color: transparent;
         }
 
         .back-link:hover {
             background: #e5e5e5;
             transform: translateY(-1px);
+            border-color: #bbbbbb;
+        }
+
+        .back-link:active {
+            transform: translateY(0);
         }
 
         /* HEADINGS */
         h2 {
-            margin-top: 40px;
+            margin-top: 42px;
             margin-bottom: 18px;
+            font-size: 24px;
+            line-height: 1.25;
+            letter-spacing: -0.01em;
         }
 
         p {
             margin-bottom: 20px;
             line-height: 1.7;
             text-align: left;
+            font-size: 16px;
         }
 
         /* JUSTIFY samo na računalniku */
@@ -126,6 +157,7 @@
         .resource-block strong {
             display: inline-block;
             margin-bottom: 10px;
+            font-size: 17px;
         }
 
         .link-group {
@@ -142,33 +174,41 @@
             justify-content: center;
             gap: 8px;
             padding: 11px 18px;
-            background: #0b57d0;
+            background: #004B49; /* Lacoste zelena */
             color: white;
             text-decoration: none;
             border-radius: 8px;
-            font-weight: bold;
+            font-weight: 600;
             font-size: 15px;
-            transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+            transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            border: 1px solid #004B49;
         }
 
         .link-button:hover {
-            background: #0948ad;
+            background: #006A4E;
+            border-color: #006A4E;
             transform: translateY(-1px);
             box-shadow: 0 4px 10px rgba(0,0,0,0.12);
             text-decoration: none;
+            color: white;
+        }
+
+        .link-button:active {
+            transform: translateY(0);
         }
 
         .link-button.secondary {
-            background: #f0f0f0;
-            color: #222;
-            border: 1px solid #d0d0d0;
+            background: white;
+            color: #004B49;
+            border: 1px solid #004B49;
             box-shadow: none;
         }
 
         .link-button.secondary:hover {
-            background: #e5e5e5;
-            color: #222;
+            background: #004B49;
+            color: white;
+            border-color: #004B49;
         }
 
         .link-button.external::before {
@@ -194,12 +234,22 @@
 
         /* MOBILE */
         @media (max-width: 700px) {
+            .header {
+                padding: 36px 16px 26px 16px;
+            }
+
             .header h1 {
                 font-size: 28px;
             }
 
             .content {
                 padding: 25px 15px 40px 15px;
+            }
+
+            h2 {
+                font-size: 20px;
+                margin-top: 34px;
+                margin-bottom: 16px;
             }
 
             .resource-block {
@@ -215,111 +265,119 @@
                 width: 100%;
                 box-sizing: border-box;
             }
+
+            .bullet-list li {
+                margin-bottom: 24px;
+            }
+
+            .resource-block strong {
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 
 <body>
 
-<div class="header">
-    <h1>PROGRAM R</h1>
-</div>
-
-<div class="content">
-
-    <a class="back-link" href="index.html" aria-label="Nazaj na začetno stran">
-        <i class="fa-solid fa-house"></i>
-    </a>
-
-    <h2>NAMESTITEV PROGRAMA R (INSTALLING PROGRAM R)</h2>
-
-    <div class="resource-block">
-        Video: How to install R for the first time
-        <div class="link-group">
-            <a class="link-button video" href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank" rel="noopener noreferrer">
-                Video
-            </a>
-        </div>
+    <div class="header">
+        <h1>PROGRAM R</h1>
     </div>
-    
-    <p>
-        To use R Studio on your computer, you need to install the following two programs:
-    </p>
 
-    <ul class="bullet-list">
-        <li class="resource-block">
-            <strong>Program R - software package</strong>
+    <div class="content">
+
+        <a class="back-link" href="index.html" aria-label="Nazaj na začetno stran">
+            <i class="fa-solid fa-house"></i>
+        </a>
+
+        <h2>NAMESTITEV PROGRAMA R (INSTALLING PROGRAM R)</h2>
+
+        <div class="resource-block">
+            Video: How to install R for the first time
             <div class="link-group">
-                <a class="link-button external" href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">
-                    Open
+                <a class="link-button video" href="https://uni-lj-si.zoom.us/rec/share/46La1usw8jz3wcgLUU21Zwn8-sXTiDwbROtoxiiXl-PwHOGHOQpGQf8BSJOm9FcL.Rr3gUNhMK9zZFYeY" target="_blank" rel="noopener noreferrer">
+                    Video
                 </a>
             </div>
-        </li>
+        </div>
 
-        <li class="resource-block">
-            <strong>R Studio - interface</strong>
+        <p>
+            To use R Studio on your computer, you need to install the following two programs:
+        </p>
+
+        <ul class="bullet-list">
+            <li class="resource-block">
+                <strong>Program R - software package</strong>
+                <div class="link-group">
+                    <a class="link-button external" href="https://cran.r-project.org/" target="_blank" rel="noopener noreferrer">
+                        Open
+                    </a>
+                </div>
+            </li>
+
+            <li class="resource-block">
+                <strong>R Studio - interface</strong>
+                <div class="link-group">
+                    <a class="link-button external" href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener noreferrer">
+                        Open
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <hr>
+
+        <h2>POVZETKI FUNKCIJ IN UKAZOV R (SUMMARY OF FUNCTIONS AND COMMANDS R)</h2>
+
+        <div class="resource-block">
             <div class="link-group">
-                <a class="link-button external" href="https://posit.co/download/rstudio-desktop/" target="_blank" rel="noopener noreferrer">
-                    Open
+                <a class="link-button secondary download" href="podatki/r_funkcije_si_v2.0.pdf" target="_blank" rel="noopener noreferrer">
+                    R funkcije za Ekonomiste, V2.0
+                </a>
+                <a class="link-button secondary download" href="podatki/r_funkcije_eng_v2.0.pdf" target="_blank" rel="noopener noreferrer">
+                    R functions for Economists, V2.0
                 </a>
             </div>
-        </li>
-    </ul>
-
-    <hr>
-
-    <h2>POVZETKI FUNKCIJ IN UKAZOV R (SUMMARY OF FUNCTIONS AND COMMANDS R)</h2>
-
-    <div class="resource-block">
-        <div class="link-group">
-            <a class="link-button secondary download" href="podatki/r_funkcije_si_v2.0.pdf" target="_blank" rel="noopener noreferrer">
-                R funkcije za Ekonomiste, V2.0
-            </a>
-            <a class="link-button secondary download" href="podatki/r_funkcije_eng_v2.0.pdf" target="_blank" rel="noopener noreferrer">
-                R functions for Economists, V2.0
-            </a>
         </div>
-    </div>
 
-    <div class="resource-block">
-        <div class="link-group">
-            <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/rstudio-ide.pdf" target="_blank" rel="noopener noreferrer">
-                RStudio - cheatsheet
-            </a>
-            <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/rmarkdown.pdf" target="_blank" rel="noopener noreferrer">
-                R Markdown - cheatsheet
-            </a>
-            <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank" rel="noopener noreferrer">
-                ggplot2 - cheatsheet
-            </a>
+        <div class="resource-block">
+            <div class="link-group">
+                <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/rstudio-ide.pdf" target="_blank" rel="noopener noreferrer">
+                    RStudio - cheatsheet
+                </a>
+                <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/rmarkdown.pdf" target="_blank" rel="noopener noreferrer">
+                    R Markdown - cheatsheet
+                </a>
+                <a class="link-button secondary download" href="https://rstudio.github.io/cheatsheets/data-visualization.pdf" target="_blank" rel="noopener noreferrer">
+                    ggplot2 - cheatsheet
+                </a>
+            </div>
         </div>
-    </div>
 
-    <h2>KRATEK UVOD V PROGRAM R (SHORT INTRODUCTION TO PROGRAM R)</h2>
+        <h2>KRATEK UVOD V PROGRAM R (SHORT INTRODUCTION TO PROGRAM R)</h2>
 
-    <div class="resource-block">
-        <div class="link-group">
-            <a class="link-button secondary download" href="podatki/Uvod v program R.pdf" target="_blank" rel="noopener noreferrer">
-                Uvod v program R
-            </a>
-            <a class="link-button secondary download" href="podatki/Uvod v R.zip" target="_blank" rel="noopener noreferrer">
-                Uvod v program R - podatki
-            </a>
+        <div class="resource-block">
+            <div class="link-group">
+                <a class="link-button secondary download" href="podatki/Uvod v program R.pdf" target="_blank" rel="noopener noreferrer">
+                    Uvod v program R
+                </a>
+                <a class="link-button secondary download" href="podatki/Uvod v R.zip" target="_blank" rel="noopener noreferrer">
+                    Uvod v program R - podatki
+                </a>
+            </div>
         </div>
-    </div>
 
-    <div class="resource-block">
-        <div class="link-group">
-            <a class="link-button secondary download" href="podatki/Introduction to program R.pdf" target="_blank" rel="noopener noreferrer">
-                Introduction to program R
-            </a>
-            <a class="link-button secondary download" href="podatki/Introduction to R.zip" target="_blank" rel="noopener noreferrer">
-                Introduction to program R - data
-            </a>
+        <div class="resource-block">
+            <div class="link-group">
+                <a class="link-button secondary download" href="podatki/Introduction to program R.pdf" target="_blank" rel="noopener noreferrer">
+                    Introduction to program R
+                </a>
+                <a class="link-button secondary download" href="podatki/Introduction to R.zip" target="_blank" rel="noopener noreferrer">
+                    Introduction to program R - data
+                </a>
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
 </body>
 </html>
